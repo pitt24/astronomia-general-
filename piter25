@@ -1,0 +1,21 @@
+import numpy as np
+
+# Definimos las constantes del universo
+G = 6.67408e-11 # Constante gravitacional
+k = 1.38064852e-23 # Constante de Boltzmann
+
+# Definimos la función que calcula la entropía de un sistema
+def entropia(energia, volumen):
+  return k * np.log(energia / volumen)
+
+# Simulamos la evolución del universo
+tiempo = np.linspace(0, 1e10, 10000)
+energia = np.sin(tiempo)
+volumen = np.cos(tiempo)
+entropia = entropia(energia, volumen)
+
+# Graficamos la evolución de la entropía
+plt.plot(tiempo, entropia)
+plt.xlabel("Tiempo (segundos)")
+plt.ylabel("Entropía (unidades arbitrarias)")
+plt.show()
